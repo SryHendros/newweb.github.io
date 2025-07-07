@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Nama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(232, 232, 235);
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: hwb(330 22% 29%);
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #472727;
+        }
+        
+        input,
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        ul {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Tambah Nama ke Daftar</h2>
+        <input type="text" id="inputNama" placeholder="Masukkan nama">
+        <button id="tambahBtn">Tambah ke Daftar</button>
+
+        <ul id="daftarNama"></ul>
+    </div>
+
+    <script>
+        const daftar = [];
+        const inputNama = document.getElementById("inputNama");
+        const tambahBtn = document.getElementById("tambahBtn");
+        const daftarNama = document.getElementById("daftarNama");
+
+        tambahBtn.addEventListener("click", function() {
+            const nama = inputNama.value.trim();
+            if (nama !== "") {
+                daftar.push(nama);
+                tampilkanDaftar();
+                inputNama.value = "";
+                inputNama.focus();
+            } else {
+                alert("Nama tidak boleh kosong!");
+            }
+        });
+
+        function tampilkanDaftar() {
+            daftarNama.innerHTML = "";
+            daftar.forEach(function(nama, index) {
+                const li = document.createElement("li");
+                li.textContent = `${index + 1}. ${nama}`;
+                daftarNama.appendChild(li);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
