@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan Makanan</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>Form Pemesanan</h1>
+  <form id="formPesan"> 
+    <label>Nama Pelanggan:<br><input type="text" id="nama" required></label><br>
+    <label>Jumlah Mie Gacoan:<br><input type="number" id="qty_mie_setan" min="0" value="0"></label><br>
+    <br>
+    <img src="https://i.pinimg.com/736x/a2/bc/21/a2bc21bb1c959f8d514a0024f6765047.jpg" alt="Mie Gacoan"  width="200px"><br>
+    <label>Jumlah Mie Hompimpa:<br><input type="number" id="qty_mie_iblis" min="0" value="0"></label><br>
+    <br>
+    <img src="https://i.pinimg.com/736x/68/79/35/68793579baff1601c623e01b4ad994a3.jpg" alt="Mie Hompimpa" width="200px"><br>
+    <label>Jumlah Es Petak Umpet:<br><input type="number" id="qty_es_genderuwo" min="0" value="0"></label><br>
+    <br>
+    <img src="https://i.pinimg.com/1200x/19/b8/1d/19b81d781d738d4b8ebafb1642f4556c.jpg" alt="Es Petak Umpet" width="200px"><br>
+    <button type="button" onclick="hitungTotal()">Hitung Total</button>
+    <p>Total Harga: <span id="total"></span></p>
+    <button type="submit">Kirim Pesanan</button>
+  </form>
+</body>
+</html>
